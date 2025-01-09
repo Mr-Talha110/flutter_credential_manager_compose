@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:credential_manager/credential_manager.dart';
 import 'package:flutter/services.dart';
@@ -323,6 +324,7 @@ class MethodChannelCredentialManager extends CredentialManagerPlatform {
       );
 
       if (res != null) {
+        log('res=????????????>>>>>>>> ${res.toString()}');
         var data = res.toString();
         return PublicKeyCredential.fromJson(jsonDecode(data));
       }
